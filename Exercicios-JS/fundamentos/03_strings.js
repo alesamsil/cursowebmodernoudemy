@@ -24,3 +24,6 @@ console.log(escola.replace(/\w/g, 'e')); //saida eeee, substitui tudo por e
 
 //gera um array usando a ',' como parametro para separação
 console.log('Ana, Maria,Joao,Pedro'.split(','));
+
+//cuidado com concatenar 
+console.log('3'+2); // vira string
