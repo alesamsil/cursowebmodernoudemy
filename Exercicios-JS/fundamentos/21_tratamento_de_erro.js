@@ -1,8 +1,11 @@
 function tratarErroELancar(erro){
-    //throw new Error('...');
-    //throw 10;
-    //throw true
-    //th 'mensagem'
+    /*
+    podemos lançar:
+    throw new Error('...');
+    throw 10;
+    throw true
+    th 'mensagem'
+    */
     throw{
         nome: erro.name,
         msg: erro.message,
