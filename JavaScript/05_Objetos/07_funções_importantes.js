@@ -4,14 +4,18 @@ const pessoa ={
     peso:13
 }
 
+//lê só as chaves
 console.log(Object.keys(pessoa));
+//lê só os valores
 console.log(Object.values(pessoa));
+//ler entradas, chave e valor
 console.log(Object.entries(pessoa));
 
 Object.entries(pessoa).forEach(([chave, valor]) => {
     console.log(`${chave}: ${valor}`)
 })
 
+//definir propriedades mais ricas
 Object.defineProperty(pessoa, 'dataNascimento',{
     enumerable: true, //propriedade de eunumeração
     writable: false, //propriedade que permite ser alterada
