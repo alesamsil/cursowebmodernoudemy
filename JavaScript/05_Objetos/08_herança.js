@@ -86,7 +86,61 @@
 }
 
 //Exemplo 3
-
 {
+    const pai2 = {
+        nome: 'Pedro',
+        corCabelo: 'preto'
+    }
+    
+    const filha1 = Object.create(pai2);
+    filha1.nome = 'Ana';
+    console.log(filha1.corCabelo);
 
+    const filha2 = Object.create(pai2, {
+        nome: {value: 'Bia', writable: false, enumerable: true}
+    })
+
+    console.log(`${filha2.nome} tem cabelo ${filha2.corCabelo}`);
+
+    console.log(Object.keys(filha1));
+    console.log(Object.keys(filha2));
+
+    for(let key in filha2) {
+        filha2.hasOwnProperty(key) ?
+            console.log(key) : console.log(`Por herança: ${key}`);
+    }
+}
+
+//Exemplo 4 
+{
+    function MeuObjeto1 () {};
+    console.log(MeuObjeto1.prototype)
+
+    const obj1 = new MeuObjeto1;
+    const obj2 = new MeuObjeto1;
+
+    console.log(obj1.__proto__ === obj2.__proto__);
+    console.log(MeuObjeto1.prototype === obj1.__proto__);
+
+    MeuObjeto1.prototype.nome = 'Anônimo';
+
+    MeuObjeto1.prototype.falar = function() {
+        console.log(`Bom dia meu nome é ${this.nome}!`)
+    }
+
+    obj1.falar();
+
+    obj2.nome = 'Rafael';
+    obj2.falar();
+
+    obj3 = {};
+    obj3.__proto__ = MeuObjeto1.prototype;
+    obj3.nome = 'Obj3';
+    obj3.falar();
+
+    //resumindo
+    console.log((new MeuObjeto1).__proto__ === MeuObjeto1.prototype);
+    console.log(MeuObjeto1.__proto__ === Function.prototype);
+    console.log(Function.prototype.__proto__ === Object.prototype); 
+    console.log(Object.prototype.__proto__ === null);
 }
