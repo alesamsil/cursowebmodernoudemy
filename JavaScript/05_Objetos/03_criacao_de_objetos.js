@@ -41,3 +41,8 @@ const filha = Object.create(null);
 filha.nome = 'Ana';
 console.log(filha);
 
+//Uma função que retorna Objetos
+const fromJSON = JSON.parse('{"info": "sou um proficional"}');
+console.log(fromJSON.info);
+
+
