@@ -1,5 +1,5 @@
 /*
-Crie uma função que receba uma array e retorne o primeiro e o último elemento desse array como um novo
+10) Crie uma função que receba uma array e retorne o primeiro e o último elemento desse array como um novo
 array:
 
 Exemplos:

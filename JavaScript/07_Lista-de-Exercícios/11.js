@@ -1,5 +1,5 @@
 /*
-Quando temos um objeto e manipulamos seus atributos, adicionando, atualizando ou removendo-os, estamos
+11) Quando temos um objeto e manipulamos seus atributos, adicionando, atualizando ou removendo-os, estamos
 apenas modificando-o, mas, em essência, o objeto continua o mesmo, ou seja a sua referência de memória é a
 mesma.
 Num projeto que você está trabalhando, você foi designado a refatorar diversas funções para que façam
