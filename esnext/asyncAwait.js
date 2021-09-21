@@ -22,22 +22,15 @@ const getTurma = (letra, callback) => {
     })
 }
 
-let nomes = []
-getTurma('A').then(alunos => {
-    nomes = nomes.concat(alunos.map(a => `A: ${a.nome}`))
-    getTurma('B').then(alunos => {
-        nomes = nomes.concat(alunos.map(a => `B: ${a.nome}`))
-        getTurma('C').then(alunos => {
-            nomes = nomes.concat(alunos.map(a => `C ${a.nome}`))
-            console.log(nomes)
-        })
-    })  
-})
+//recurso do es8 
+let obterAlunos = async () => {
+    const ta =  await getTurma('A')
+    const tb =  await getTurma('B')
+    const tc =  await getTurma('C')
+    return [].concat(ta, tb, tc)
+}
 
-Promise.all([getTurma('A'), getTurma('B'), getTurma('C')])
-    .then(turmas => [].concat(...turmas))
-    .then(alunos => alunos.map(aluno => aluno.nome))
+obterAlunos()
+    .then(alunos => alunos.map(a => a.nome))
     .then(nomes => console.log(nomes))
-    .catch(e => console.log(e.mesa))
 
-getTurma('D').catch( e => console.log(e.message))
