@@ -18,7 +18,8 @@
     <nav>
         <!-- <a href wm-nav="./Exercícios/temp.html">Temp</a> -->
         <a href wm-nav="./Exercícios/teste.html">00 - Teste</a> |
-        <a href wm-nav="./Exercícios/texto1.html">00 - Texto 1</a>
+        <a href wm-nav="./Exercícios/texto1.html">01 - Texto 1</a>|
+        <a href wm-nav="./Exercícios/texto2.html">02 - Texto 2</a>
         
     </nav>
     <section id="conteudo"></section>
@@ -31,7 +32,7 @@
             
             link.onclick = function (e){
                 e.preventDefault()
-                fetch(link.href)
+                fetch(link.getAttribute('wm-nav'))
                     .then(resp => resp.text())
                     .then(html => conteudo.innerHTML = html)
             }
