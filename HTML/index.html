@@ -9,17 +9,24 @@
 <body>
     <header>
         <h1>Exercícios HTML</h1>
+        <style>
+            #conteudo{
+                padding: 30px 0px;
+            }
+        </style>
     </header>
     <nav>
-        <a href="./Exercícios/teste.html">00 - Teste</a> |
-        <a href="./Exercícios/temp.html">Temp</a>
+        <!-- <a href wm-nav="./Exercícios/temp.html">Temp</a> -->
+        <a href wm-nav="./Exercícios/teste.html">00 - Teste</a> |
+        <a href wm-nav="./Exercícios/texto1.html">00 - Texto 1</a>
+        
     </nav>
     <section id="conteudo"></section>
     <footer>
         Curso de WEB Moderno
     </footer>
     <script>
-        document.querySelectorAll('a').forEach( link => {
+        document.querySelectorAll('[wm-nav]').forEach( link => {
             const conteudo =  document.getElementById('conteudo')
             
             link.onclick = function (e){
